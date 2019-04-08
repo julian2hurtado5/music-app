@@ -1,0 +1,12 @@
+
+<%= form_for  @music_list do |f|%>
+<div class="form-group">
+   <label for="music_list_nombre_cancion">Nombre Canción</label>
+   <%= f.text_field :nombre_cancion%>
+ </div>
+ <div class="form-group">
+   <label for="music_list_url">url canción</label>
+   <%= f.text_field :url%>
+ </div>
+<%= f.submit %>
+<% end %>

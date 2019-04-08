@@ -22,6 +22,7 @@
                 <% if user_signed_in? %>
                 <%= link_to "Salir", destroy_user_session_path, :method => :delete, class:"btn btn-danger"%>
                 <% end %>
+                <%=link_to "", :root %>
               </li>
             </div>
           </ul>
@@ -30,26 +31,10 @@
     </div>
   </div>
   <br>
-    <div class="col align-self-center">
-      <h6>Hola <%=current_user.email%> Esta es tu Lista de canciones </h6>
-      <br>
-      <div class="new">
-        <h5> <%=link_to "Añanade nueva música", new_music_list_path %> </h5>
-      </div>
-      <br>
-      <h4> Listado de Música</h4>
-      <ul>
-        <% @music_lists.each do |music_list|%>
-        <li>
-          <p>
-            <%= music_list.nombre_cancion%>
-          </p>
-          <%= link_to 'Destroy', { :action => :destroy, :id => music_list.id }, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
-          <p>
-            <%= music_list.url%>
-          </p>
-          <iframe width="380" height="275" src="<%= music_list.url %>" frameborder="0" allowfullscreen></iframe>
-          <%end%>
-        </ul>
-      </div>
-    </div>
+  <h4> Listado de Música</h4>
+  <p>
+    <%= @music_list.nombre_cancion%>
+  </p>
+  <iframe width="380" height="275" src="<%= @music_list.url %>" frameborder="0" allowfullscreen></iframe>
+
+</div>

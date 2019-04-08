@@ -13,3 +13,11 @@
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
+ //
+
+ body {
+   background: #343a40;
+ }
+ .container {
+   background-color: #585858;
+ }
